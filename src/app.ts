@@ -12,12 +12,15 @@ const AppRun = async () => {
 
     switch (opt) {
       case "1":
-        //Funcion que permite mostrar nombre de todos los perosnajes dela api
+        // Función que permite mostrar el nombre de todos los personajes de la API.
+        // Ejemplo: await AllCharacters();
         break;
 
       case "2":
         const character = await readInput();
-        //Funcion que permite mostrar mediante un nombre un perosnaje + su informacion
+        // Función que permite mostrar, mediante un nombre, un personaje y su información.
+        // Tomando como parámetro el "character", que es el input que introduce el usuario.
+        // Ejemplo: await CharacterByName(character);
         break;
 
       default:
