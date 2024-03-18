@@ -34,6 +34,10 @@ export const CharacterByName = async (characterName: string) => {
             console.log('Character not found.');
         }
     } catch (error) {
-        console.error('Error searching for character:', error);
+        if (axios.isAxiosError(error) && error.response && error.response.status === 404) {
+            console.log('Character not found.');
+        } else {
+            console.error('Error searching for character:', error);
+        }
     }
 };
