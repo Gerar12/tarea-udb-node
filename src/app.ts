@@ -26,7 +26,12 @@ const AppRun = async () => {
         await CharacterByName(character);
         break;
 
+      case "0":
+        console.log("Bye bye!");
+        break;
+
       default:
+        console.log("Opción no válida");
         break;
     }
 

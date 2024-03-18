@@ -6,14 +6,14 @@ import axios from 'axios';
  */
 export const AllCharacters = async () => {
     try {
-        let nextPageUrl: string | null = 'https://rickandmortyapi.com/api/character';
-        while (nextPageUrl) {
-            const response: any = await axios.get(nextPageUrl);
-            response.data.results.forEach((character: { name: string }) => {
-                console.log(character.name);
-            });
-            nextPageUrl = response.data.info.next;
-        }
+        // URL de la API con la primera página de personajes
+        const url = 'https://rickandmortyapi.com/api/character';
+        const response = await axios.get(url);
+        // Limitamos la salida a los primeros 10 personajes
+        const characters = response.data.results.slice(0, 10);
+        characters.forEach((character: { name: string }) => {
+            console.log(character.name);
+        });
     } catch (error) {
         console.error('Error fetching characters:', error);
     }
