@@ -17,7 +17,7 @@ const inquirerMenu = async () => {
         value: "1",
       },
       {
-        name: "Buscar a un perosnaje",
+        name: "Buscar a un personaje por nombre",
         value: "2",
       },
       {
@@ -32,7 +32,7 @@ const inquirerMenu = async () => {
 const pause = async () => {
   console.log("  ");
 
-  await input({ message: `Preciona ${"enter".green} para continuar` });
+  await input({ message: `Presiona ${"enter".green} para continuar` });
   console.clear();
 };
 
